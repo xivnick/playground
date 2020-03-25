@@ -1,0 +1,68 @@
+{% load static %}
+
+<html>
+<head>
+    <title>xivnick's plaground</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/login.css' %}"/>
+    <link rel="stylesheet" href="https://use.typekit.net/sih5llr.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div id="body-wrapper" style="background: url('{% static 'playground/image/background_paper.jpg' %}') repeat-y; background-size: 100%">
+        <header>
+            <div id="header-back" class="base-color default-shadow">
+                {# pixel logo #}
+                <a href="/"><div class="logo-wrapper">
+                    <div class="logo-row">
+                        <div class="logo-box gray50"></div>
+                        <div class="logo-box gray400"></div>
+                        <div class="logo-box primary-color"></div>
+                    </div>
+                    <div class="logo-row">
+                        <div class="logo-box gray400"></div>
+                        <div class="logo-box gray400"></div>
+                        <div class="logo-box primary-color"></div>
+                    </div>
+                    <div class="logo-row">
+                        <div class="logo-box gray400"></div>
+                        <div class="logo-box primary-color"></div>
+                        <div class="logo-box primary-light"></div>
+                    </div>
+                </div></a>
+                {# pixel logo end #}
+                <h1 class="title-font"><a href="/">Playground</a></h1>
+            </div>
+        </header>
+        <div id="left-sidebar">
+            <div id="sub-title-wrapper">
+                <div id="sub-title-back" class="base-color default-shadow">
+                    <h2 class="title-font">Welcome!</h2>
+                </div>
+                <div id="sub-title-triangle"></div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div class="content-back base-color default-border">
+                <form id="login-form">
+                    <div class="text-center content-title">
+                        <h3>로그인</h3>
+                    </div>
+                    <div class="line"></div>
+                    <input class="login-input default-border small-border-radius" type="text" placeholder="아이디">
+                    <input class="login-input default-border small-border-radius" type="password" placeholder="비밀번호">
+                    <button class="register-button primary-color default-shadow default-border-radius">로그인</button>
+                    <div id="sign-up-text" class="text-center">
+                        계정이 없으신가요? <a id="sing-up-button" href="/">가입하기</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
