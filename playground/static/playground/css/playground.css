@@ -164,7 +164,7 @@ button{
     border-color: #BDBDBD;
     color: #000000;
     font-size: 16px;
-    line-height: 40px;
+    line-height: 36px;
 }
 
 .register-button{
@@ -185,42 +185,14 @@ button{
 
 
 @media all and (max-width: 1024px) {
+    /* 1024 이하일 경우 subtitle 가로 고정 */
     #sub-title-wrapper{
         width: 256px;
     }
 }
 
-/*@media all and (min-width: 960px) {*/
-/*    #sub-title-back{*/
-/*        width: 72%;*/
-/*    }*/
-/*}*/
-
-/*@media all and (max-width: 768px) {*/
-/*    #sub-title-wrapper {*/
-/*        float: none;*/
-/*        width: 80%;*/
-/*        margin: auto;*/
-/*        padding: 0;*/
-/*        height: 60px;*/
-/*    }*/
-/*    #sub-title-back{*/
-/*        width: 200px;*/
-/*        padding: 0;*/
-/*        text-align: center;*/
-/*    }*/
-/*    #sub-title-triangle{*/
-/*        display: none;*/
-/*    }*/
-
-/*    #content-wrapper {*/
-/*        width: 80%;*/
-/*        margin: auto;*/
-/*        float: none;*/
-/*    }*/
-/*}*/
-
 @media all and (max-width: 768px) {
+    /* 768 이하일 경우 모바일 화면 띄우 */
     h1{
         font-size: 32px;
         line-height: 41px;
