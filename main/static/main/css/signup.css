@@ -1,12 +1,12 @@
 
 #body-wrapper{
-    height: 640px;
+    height: 800px;
 }
 
 .content-back{
     margin: auto;
     width: 384px;
-    height: 352px;
+    height: 512px;
     padding-top: 32px;
 }
 

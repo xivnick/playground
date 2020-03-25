@@ -7,3 +7,7 @@ def main(req):
 
 def login(req):
     return render(req, 'main/login.html', {})
+
+
+def signup(req):
+    return render(req, 'main/signup.html')

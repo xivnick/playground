@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Sign Up || xivnick's plaground</title>
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/signup.css' %}"/>
+{% endblock css %}
+
+{% block body %}
+        <div id="left-sidebar">
+            <div id="sub-title-wrapper">
+                <div id="sub-title-back" class="base-color default-shadow">
+                    <h2 class="title-font">Sign Up</h2>
+                </div>
+                <div id="sub-title-triangle"></div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div class="content-back base-color default-border">
+                <form id="login-form">
+                    <div class="text-center content-title">
+                        <h3>회원가입</h3>
+                    </div>
+                    <div class="line"></div>
+                    <input class="login-input default-border small-border-radius" type="text" placeholder="아이디">
+                    <input class="login-input default-border small-border-radius" style="margin-bottom: 10px" type="password" placeholder="비밀번호">
+                    <input class="login-input default-border small-border-radius" type="password" placeholder="비밀번호 확인">
+                    <input class="login-input default-border small-border-radius" type="text" placeholder="이름">
+                    <input class="login-input default-border small-border-radius" type="email" placeholder="이메일">
+                    <button class="register-button primary-color default-shadow default-border-radius">회원가입</button>
+                    <div id="hagi-text" class="text-center">
+                        이미 계정이 있으신가요? <a id="hagi-button" href="/login">로그인하기</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

@@ -56,7 +56,7 @@ header{
 
 h1{
     font-size: 40px;
-    line-height: 48px;
+    line-height: 52px;
     margin: 0 0 0 16px;
     float: left;
 }
@@ -122,7 +122,7 @@ h2{
 /* content setting */
 #content-wrapper{
     width: 512px;
-    padding-top: 64px;
+    padding-top: 48px;
     float: left;
 }
 
@@ -174,41 +174,111 @@ button{
 }
 
 
-@media all and (min-width: 960px) {
-    #sub-title-back{
-        width: 72%;
+#hagi-text{
+    font-size: 12px;
+}
+
+#hagi-button{
+    color: #3F51B5;
+    font-weight: bold;
+}
+
+
+@media all and (max-width: 1024px) {
+    #sub-title-wrapper{
+        width: 256px;
     }
 }
 
+/*@media all and (min-width: 960px) {*/
+/*    #sub-title-back{*/
+/*        width: 72%;*/
+/*    }*/
+/*}*/
+
+/*@media all and (max-width: 768px) {*/
+/*    #sub-title-wrapper {*/
+/*        float: none;*/
+/*        width: 80%;*/
+/*        margin: auto;*/
+/*        padding: 0;*/
+/*        height: 60px;*/
+/*    }*/
+/*    #sub-title-back{*/
+/*        width: 200px;*/
+/*        padding: 0;*/
+/*        text-align: center;*/
+/*    }*/
+/*    #sub-title-triangle{*/
+/*        display: none;*/
+/*    }*/
+
+/*    #content-wrapper {*/
+/*        width: 80%;*/
+/*        margin: auto;*/
+/*        float: none;*/
+/*    }*/
+/*}*/
+
 @media all and (max-width: 768px) {
-    #sub-title-wrapper {
+    h1{
+        font-size: 32px;
+        line-height: 41px;
+        margin: 0 0 0 12px;
+    }
+    header{
+        height: 112px;
+    }
+    #header-back{
+        height: 64px;
+        padding: 10px 0 13px 16px;
+    }
+
+    h2{
+        font-size: 28px;
+        text-align: center;
+    }
+    #left-sidebar{
         float: none;
-        width: 80%;
+        width: calc(100% - 64px);
         margin: auto;
-        padding: 0;
-        height: 60px;
+    }
+    #sub-title-wrapper{
+        position: static;
+        width: 100%;
     }
     #sub-title-back{
-        width: 200px;
-        padding: 0;
-        text-align: center;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: none;
+        border-bottom: 1px solid #BDBDBD;
     }
     #sub-title-triangle{
         display: none;
     }
 
     #content-wrapper {
-        width: 80%;
-        margin: auto;
         float: none;
+        width: calc(100% - 64px);
+        margin: auto;
+        padding-top: 0;
     }
 }
 
-@media all and (max-width: 512px) {
-    #header-back{
-        width: 100%
+@media all and (max-width: 384px) {
+    #left-sidebar{
+        width: calc(100% - 32px);
     }
-    #header-triangle{
-        visibility: hidden;
+    #content-wrapper{
+        width: calc(100% - 32px);
     }
 }
+
+/*@media all and (max-width: 512px) {*/
+/*    #header-back{*/
+/*        width: 100%*/
+/*    }*/
+/*    #header-triangle{*/
+/*        visibility: hidden;*/
+/*    }*/
+/*}*/
