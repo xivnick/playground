@@ -1,13 +1,7 @@
 
-#body-wrapper{
-    height: 640px;
-}
-
 .content-back{
     margin: auto;
     width: 384px;
-    height: 352px;
-    padding-top: 32px;
 }
 
 #login-form{

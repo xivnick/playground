@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    <title>Sign Up || xivnick's playground</title>
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/signup.css' %}"/>
+{% endblock css %}
+
+{% block body %}
+    <div id="left-sidebar">
+        <div id="sub-title-wrapper">
+            <div id="sub-title-back" class="base-color default-shadow">
+                <h2 class="title-font"><a href="">Sign Up</a></h2>
+            </div>
+            <div id="sub-title-triangle"></div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div class="content-back base-color default-border">
+            <form id="login-form" method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                <div class="text-center content-title">
+                    <h3>회원가입</h3>
+                </div>
+                <div class="line"></div>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <p class="error-message">{{ form.username.errors.0 }}</p>
+                {% endif %}
+                {{ form.password }}
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <p class="error-message">{{ form.password2.errors.0 }}</p>
+                {% endif %}
+                {{ form.first_name }}
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <p class="error-message">{{ form.email.errors.0 }}</p>
+                {% endif %}
+                <button class="register-button primary-color default-shadow default-border-radius">회원가입</button>
+                <div id="hagi-text" class="text-center">
+                    이미 계정이 있으신가요? <a id="hagi-button" href="{% url 'account_login' %}">로그인하기</a>
+                </div>
+                <script>
+                    {% for error in form.errors %}
+                        console.log( "{{ error }}" )
+                    {% endfor %}
+                </script>
+
+            </form>
+        </div>
+    </div>
+{% endblock body %}
