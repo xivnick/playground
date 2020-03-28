@@ -41,6 +41,9 @@ body{
 .small-border-radius{
     border-radius: 2px;
 }
+.medium-border-radius{
+    border-radius: 4px;
+}
 
 .title-font{
     font-family: futura-pt-bold, sans-serif;
