@@ -23,3 +23,13 @@
         width: 68.2%;
     }
 }
+
+@media all and (max-width: 480px) {
+    /* 로그인 버튼이 없어서 480일때 헤더를 다시 복구 */
+    header{
+        height: 80px;
+    }
+    #header-back{
+        height: 64px;
+    }
+}

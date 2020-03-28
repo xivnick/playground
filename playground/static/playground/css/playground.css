@@ -282,6 +282,9 @@ form>.error-message{
 }
 
 @media all and (max-width: 480px) {
+    header{
+        height: 112px;
+    }
     #user-button-wrapper{
         margin-left: calc(100% - 192px);
         margin-bottom: 12px;
