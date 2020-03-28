@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'account/css/signup.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}"/>
 {% endblock css %}
 
 {% block body %}
@@ -43,11 +43,11 @@
                 {% endif %}
                 <button class="register-button primary-color default-shadow medium-border-radius">회원가입</button>
                 <div id="hagi-text" class="text-center">
-                    이미 계정이 있으신가요? <a id="hagi-button" href="{% url 'account_login' %}">로그인하기</a>
+                    이미 계정이 있으신가요? <a class="text-button-color" href="{% url 'account_login' %}">로그인하기</a>
                 </div>
                 <script>
                     {% for error in form.errors %}
-                        console.log( "{{ error }}" )
+                        console.log( "{{ error }}" );
                     {% endfor %}
                 </script>
 

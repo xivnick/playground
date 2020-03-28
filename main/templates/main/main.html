@@ -11,11 +11,4 @@
 {% endblock css %}
 
 {% block body %}
-
-    {% if user.is_authenticated  %}
-        안녕하세요, {{ user.first_name }}님! <br>
-        <a href="{% url 'account_logout' %}">로그아웃</a>
-    {% else %}
-    <a href="{% url 'account_login' %}">로그인</a>
-    {% endif %}
 {% endblock body %}

@@ -8,6 +8,7 @@ a, a:hover, a:visited, a:active{
 /* default css */
 body{
     background: #BDBDBD;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .base-color{
@@ -25,9 +26,12 @@ body{
     background-color: #3F51B5;
     color: white;
 }
-
 .primary-light{
     background-color: #BBB5FF;
+}
+.text-button-color{
+    color: #3F51B5 !important;
+    font-weight: 500;
 }
 
 .default-shadow{
@@ -86,7 +90,7 @@ h1{
     position: fixed;
 }
 
-.logo-wrapper{
+#logo-wrapper{
     float: left;
 }
 .logo-row{
@@ -97,6 +101,16 @@ h1{
     height: 16px;
     width: 16px;
     border: 1px solid #FDFDFD;
+}
+
+#user-button-wrapper{
+    width: 256px;
+    float: right;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 8px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #BDBDBD;
 }
 
 /* sub title setting */
@@ -203,12 +217,6 @@ form>.error-message{
 #hagi-text{
     font-size: 12px;
 }
-
-#hagi-button{
-    color: #3F51B5;
-    font-weight: bold;
-}
-
 
 @media all and (max-width: 1024px) {
     /* 1024 이하일 경우 subtitle 가로 고정 */

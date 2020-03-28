@@ -9,6 +9,7 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
     <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}"/>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500&display=swap" rel="stylesheet">
     {% block css %}
     {% endblock css %}
     <link rel="stylesheet" href="https://use.typekit.net/sih5llr.css">  {# 제목용 폰 #}
@@ -33,7 +34,7 @@
         <header>
             <div id="header-back" class="base-color default-shadow">
                 {# pixel logo #}
-                <a href="/"><div class="logo-wrapper">
+                <a href="/"><div id="logo-wrapper">
                     <div class="logo-row">
                         <div class="logo-box gray50"></div>
                         <div class="logo-box gray400"></div>
@@ -52,6 +53,15 @@
                 </div></a>
                 {# pixel logo end #}
                 <h1 class="title-font"><a href="/">Playground</a></h1>
+                {# user button #}
+                <div id="user-button-wrapper">
+                    {% if user.is_authenticated  %}
+                        안녕하세요, {{ user.first_name }}님!<a class="text-button-color" style="margin-left: 16px" href="{% url 'account_logout' %}">로그아웃</a>
+                    {% else %}
+                    로그인을 해주세요!<a class="text-button-color" style="margin-left: 16px"  href="{% url 'account_login' %}">로그인</a>
+                    {% endif %}
+                </div>
+                {# user button end #}
             </div>
         </header>
         {% block body %}
