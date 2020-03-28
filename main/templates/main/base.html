@@ -33,6 +33,15 @@
     <div id="body-wrapper" style="">
         <header>
             <div id="header-back" class="base-color default-shadow">
+                {# user button #}
+                <div id="user-button-wrapper">
+                    {% if user.is_authenticated  %}
+                        안녕하세요, {{ user.first_name }}님!<a class="text-button-color" style="margin-left: 16px" href="{% url 'account_logout' %}">로그아웃</a>
+                    {% else %}
+                    로그인을 해주세요!<a class="text-button-color" style="margin-left: 16px"  href="{% url 'account_login' %}">로그인</a>
+                    {% endif %}
+                </div>
+                {# user button end #}
                 {# pixel logo #}
                 <a href="/"><div id="logo-wrapper">
                     <div class="logo-row">
@@ -53,15 +62,6 @@
                 </div></a>
                 {# pixel logo end #}
                 <h1 class="title-font"><a href="/">Playground</a></h1>
-                {# user button #}
-                <div id="user-button-wrapper">
-                    {% if user.is_authenticated  %}
-                        안녕하세요, {{ user.first_name }}님!<a class="text-button-color" style="margin-left: 16px" href="{% url 'account_logout' %}">로그아웃</a>
-                    {% else %}
-                    로그인을 해주세요!<a class="text-button-color" style="margin-left: 16px"  href="{% url 'account_login' %}">로그인</a>
-                    {% endif %}
-                </div>
-                {# user button end #}
             </div>
         </header>
         {% block body %}

@@ -237,11 +237,17 @@ form>.error-message{
     }
     #header-back{
         height: 64px;
+        /*height: 96px;*/
         padding: 14px 0 13px 14px;
     }
     .logo-box{
         height: 12px;
         width: 12px;
+    }
+
+    #user-button-wrapper{
+        font-size: 12px;
+        width: 192px;
     }
 
     h2{
@@ -272,6 +278,16 @@ form>.error-message{
         width: calc(100% - 64px);
         margin: auto;
         padding-top: 0;
+    }
+}
+
+@media all and (max-width: 480px) {
+    #user-button-wrapper{
+        margin-left: calc(100% - 192px);
+        margin-bottom: 12px;
+    }
+    #header-back{
+        height: 96px;
     }
 }
 
