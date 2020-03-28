@@ -8,36 +8,33 @@
     <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}"/>
 {% endblock css %}
 
-{% block body %}
-    <div id="left-sidebar">
-        <div id="sub-title-wrapper">
-            <div id="sub-title-back" class="base-color default-shadow">
-                <h2 class="title-font"><a href="">Welcome!</a></h2>
-            </div>
-            <div id="sub-title-triangle"></div>
+{% block left %}
+    <div id="sub-title-wrapper">
+        <div id="sub-title-back" class="base-color default-shadow">
+            <h2 class="title-font"><a href="">Welcome!</a></h2>
         </div>
+        <div id="sub-title-triangle"></div>
     </div>
-    <div id="content-wrapper">
-        <div class="content-back base-color default-border">
-            <form id="login-form" method="POST" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                <div class="text-center content-title">
-                    <h3>로그인</h3>
-                </div>
-                <div class="line"></div>
-                {{ form.username }}
-                {% if failed and not form.username.errors %}
-                    <p class="error-message">존재하지 않는 아이디입니다.</p>
-                {% endif %}
-                {{ form.password }}
-                {% if failed and form.username.errors %}
-                    <p class="error-message">아이디 또는 비밀번호가 맞지 않습니다.</p>
-                {% endif %}
-                <button class="register-button primary-color default-shadow medium-border-radius">로그인</button>
-                <div id="hagi-text" class="text-center">
-                    계정이 없으신가요? <a class="text-button-color" href="{% url 'account_signup' %}">가입하기</a>
-                </div>
-            </form>
+{% endblock left %}
+
+{% block content %}
+    <form id="login-form" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        <div class="text-center content-title">
+            <h3>로그인</h3>
         </div>
-    </div>
-{% endblock body %}
+        <div class="line"></div>
+        {{ form.username }}
+        {% if failed and not form.username.errors %}
+            <p class="error-message">존재하지 않는 아이디입니다.</p>
+        {% endif %}
+        {{ form.password }}
+        {% if failed and form.username.errors %}
+            <p class="error-message">아이디 또는 비밀번호가 맞지 않습니다.</p>
+        {% endif %}
+        <button class="register-button primary-color default-shadow medium-border-radius">로그인</button>
+        <div id="hagi-text" class="text-center">
+            계정이 없으신가요? <a class="text-button-color" href="{% url 'account_signup' %}">가입하기</a>
+        </div>
+    </form>
+{% endblock content %}

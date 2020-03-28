@@ -62,8 +62,16 @@
                 <h1 class="title-font"><a href="/">Nemos</a></h1>
             </div>
         </header>
-        {% block body %}
-        {% endblock body %}
+        <div id="left-sidebar">
+            {% block left %}
+            {% endblock left %}
+        </div>
+        <div id="content-wrapper">
+            <div class="content-back base-color default-border">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
     </div>
 
 </body>
