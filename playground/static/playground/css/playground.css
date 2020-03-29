@@ -4,6 +4,9 @@ a, a:hover, a:visited, a:active{
     color: #000000;
     text-decoration: none;
 }
+button:focus {
+  outline: none;
+}
 
 /* default css */
 body{
@@ -91,6 +94,13 @@ body{
 }
 .primary-light-button:active{
     background-color: #3F51B5;
+}
+.primary-border-button{
+    background-color: #FFFFFF;
+    color: #3F51B5;
+}
+.primary-border-button:active{
+    background-color: #EEEEEE;
 }
 
 /* background css */
