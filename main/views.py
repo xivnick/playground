@@ -8,7 +8,7 @@ def root(req):
 
 def room_list(req):
 
-    rooms = Room.objects.all()
+    rooms = Room.objects.all().order_by('-status')
 
     return render(req, 'main/room_list.html', {'rooms': rooms})
 
