@@ -9,7 +9,7 @@
     width: 384px;
 }
 
-#login-form{
+#register-form{
     width: 240px;
     margin: auto;
 }
@@ -21,7 +21,7 @@
 }
 
 @media all and (max-width: 384px) {
-    #login-form{
+    #register-form{
         width: 68.2%;
     }
 }

@@ -24,9 +24,9 @@
             </div>
             <div class="room-game-wrapper">{{ room.get_game_display }} - 1 / 5</div>
             {% if room.get_status_display == "waiting" %}
-                <button class="room-button primary-color default-border-radius default-shadow">입장</button>
+                <button class="room-button primary-button default-shadow">입장</button>
             {% else %}
-                <button class="room-button primary-light default-border-radius default-shadow">관전</button>
+                <button class="room-button primary-light-button default-shadow">관전</button>
             {% endif %}
 
         </div>

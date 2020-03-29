@@ -31,6 +31,10 @@ body{
     background-color: #7986CB;
     color: white;
 }
+.primary-dark{
+    background-color: #303F9F;
+    color: white;
+}
 .text-button-color{
     color: #3F51B5 !important;
     font-weight: 500;
@@ -69,6 +73,24 @@ body{
     font-family: futura-pt, sans-serif;
     font-weight: 500;
     font-style: normal;
+}
+
+/* components */
+.primary-button{
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    background-color: #3F51B5;
+    color: white;
+}
+.primary-button:active{
+    background-color: #303F9F;
+}
+.primary-light-button{
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    background-color: #7986CB;
+    color: white;
+}
+.primary-light-button:active{
+    background-color: #3F51B5;
 }
 
 /* background css */
