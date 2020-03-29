@@ -8,7 +8,8 @@ a, a:hover, a:visited, a:active{
 /* default css */
 body{
     background: #BDBDBD;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: '본고딕', 'Noto Sans KR', sans-serif;
+    font-weight: 300;
 }
 
 .base-color{
@@ -27,11 +28,15 @@ body{
     color: white;
 }
 .primary-light{
-    background-color: #BBB5FF;
+    background-color: #7986CB;
+    color: white;
 }
 .text-button-color{
     color: #3F51B5 !important;
     font-weight: 500;
+}
+.primary-text-color{
+    color: #3F51B5
 }
 
 .default-shadow{
@@ -41,17 +46,28 @@ body{
 .default-border{
     border: 1px solid #BDBDBD;
 }
-
-.small-border-radius{
-    border-radius: 2px;
+.primary-border{
+    border: #3F51B5;
 }
-.medium-border-radius{
+.semi-border{
+    border: 3px solid;
+}
+
+.default-border-radius{
     border-radius: 4px;
 }
+.medium-border-radius{
+    border-radius: 8px;
+}
 
-.title-font{
+.bold-futura{
     font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
+    font-style: normal;
+}
+.medium-futura{
+    font-family: futura-pt, sans-serif;
+    font-weight: 500;
     font-style: normal;
 }
 
@@ -88,6 +104,7 @@ h1{
     top: 0;
     left: 0;
     position: fixed;
+    z-index: 100;
 }
 
 #logo-wrapper{
@@ -113,7 +130,8 @@ h1{
     border-bottom: 1px solid #BDBDBD;
 }
 
-/* sub title setting */
+/* left setting */
+
 h2{
     font-size: 32px;
     line-height: 72px;
@@ -121,25 +139,19 @@ h2{
     margin: 0;
 }
 
-#left-sidebar{
-    width: calc(50% - 256px);
-    height: 100px;
-    float: left;
-}
-
-#sub-title-wrapper{
+#left-wrapper{
     width: calc(50% - 256px);
     position: fixed;
 }
 
-#sub-title-back{
+#left-back{
     padding-right: 16px;
     height: 64px;
     width: calc(100% - 32px);
     float: left;
 }
 
-#sub-title-triangle{
+#left-triangle{
     border-top: 64px solid #FDFDFD;
     border-right: 32px solid transparent;
     height: 0;
@@ -147,18 +159,52 @@ h2{
     float: left
 }
 
+@media all and (max-width: 1024px) {
+    /* 1024 이하일 경우 subtitle 가로 고정 */
+    #left-wrapper{
+        width: 256px;
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    h2{
+        font-size: 28px;
+        text-align: center;
+    }
+    #left-wrapper{
+        position: static;
+        width: 87%;
+        margin: 0 auto 32px;
+    }
+    #left-back{
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: none;
+        border-bottom: 1px solid #BDBDBD;
+        padding: 0;
+        float: none;
+    }
+    #left-triangle{
+        display: none;
+    }
+
+    #left-wrapper:after{
+        clear: both;
+    }
+}
+
 /* content setting */
+#content-wrapper{
+    width: 512px;
+    margin: auto;
+    padding-top: 48px;
+}
+
 .content-back{
     padding-top: 32px;
     padding-bottom: 48px;
 }
-
-#content-wrapper{
-    width: 512px;
-    padding-top: 48px;
-    float: left;
-}
-
 .content-title{
     width: 99%;
     margin-bottom: 32px;
@@ -218,15 +264,18 @@ form>.error-message{
     font-size: 12px;
 }
 
-@media all and (max-width: 1024px) {
-    /* 1024 이하일 경우 subtitle 가로 고정 */
-    #sub-title-wrapper{
-        width: 256px;
-    }
-}
-
 @media all and (max-width: 768px) {
     /* 768 이하일 경우 모바일 화면 띄우기 */
+    .semi-border{
+        border: 2px solid;
+    }
+    .default-border-radius{
+        border-radius: 2px;
+    }
+    .medium-border-radius{
+        border-radius: 4px;
+    }
+
     h1{
         font-size: 32px;
         line-height: 36px;
@@ -237,7 +286,6 @@ form>.error-message{
     }
     #header-back{
         height: 64px;
-        /*height: 96px;*/
         padding: 14px 0 13px 14px;
     }
     .logo-box{
@@ -250,32 +298,9 @@ form>.error-message{
         width: 192px;
     }
 
-    h2{
-        font-size: 28px;
-        text-align: center;
-    }
-    #left-sidebar{
-        float: none;
-        width: calc(100% - 64px);
-        margin: auto;
-    }
-    #sub-title-wrapper{
-        position: static;
-        width: 100%;
-    }
-    #sub-title-back{
-        width: 100%;
-        background-color: #ffffff;
-        box-shadow: none;
-        border-bottom: 1px solid #BDBDBD;
-    }
-    #sub-title-triangle{
-        display: none;
-    }
-
     #content-wrapper {
         float: none;
-        width: calc(100% - 64px);
+        width: 83%;
         margin: auto;
         padding-top: 0;
     }
@@ -296,10 +321,21 @@ form>.error-message{
 
 @media all and (max-width: 384px) {
     /* 작은 모바일 화면 양쪽 여백 대응 */
-    #left-sidebar{
-        width: calc(100% - 32px);
+    #left-wrapper{
+        width: calc(100% - 48px);
+    }
+    #content-wrapper{
+        width: calc(100% - 64px);
+    }
+}
+
+@media all and (max-width: 360px) {
+    /* 작은 모바일 화면 양쪽 여백 대응 */
+    #left-wrapper{
+        width: calc(100% - 20px);
     }
     #content-wrapper{
         width: calc(100% - 32px);
     }
 }
+

@@ -1,0 +1,146 @@
+.content-back{
+    width: 100%;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+#new-room-button{
+    height: 80px;
+    margin-bottom: 32px;
+
+    font-size: 32px;
+    line-height: 80px;
+    text-align: center;
+}
+
+.room-wrapper{
+    position: relative;
+    height: 128px;
+    margin-bottom: 16px;
+    /*padding: 24px;*/
+    background-color: #FFFFFF;
+}
+.room-header-wrapper{
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+.room-header-wrapper:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.room-status-wrapper{
+    width: 64px;
+    height: 28px;
+
+    line-height: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    float: left;
+}
+
+.status-waiting{
+    border: 1px solid #3F51B5;
+    color: #3F51B5;
+}
+.status-in-game{
+    border: 1px solid #BDBDBD;
+    color: #BDBDBD;
+}
+
+.room-title-wrapper{
+    margin-left: 8px;
+    float: left;
+
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+}
+.room-game-wrapper{
+    position: absolute;
+
+    font-size: 20px;
+    left: 24px;
+    bottom: 24px;
+}
+.room-button{
+    position: absolute;
+    right: 24px;
+    bottom: 20px;
+
+    width: 96px;
+    height: 36px;
+
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media all and (max-width: 768px) {
+    .content-back{
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    #new-room-button{
+        height: 48px;
+        line-height: 48px;
+        margin-bottom: 16px;
+    }
+
+    .room-wrapper{
+        height: 80px;
+        margin-bottom: 8px;
+    }
+    .room-header-wrapper{
+        left: 16px;
+        top: 16px;
+    }
+    .room-status-wrapper{
+        width: 48px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .room-title-wrapper{
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .room-game-wrapper{
+        left: 16px;
+        bottom: 16px;
+
+        font-size: 12px;
+    }
+    .room-button{
+        width: 64px;
+        height: 24px;
+
+        right: 16px;
+        bottom: 12px;
+
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .content-back{
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+}
+
+@media all and (max-width: 384px) {
+    .content-back{
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .content-back{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
