@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Create! :: {% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}?version=1.1"/>
+{% endblock css %}
+
+{% block left %}
+<h2 class="medium-futura"><a href="">Create!</a></h2>
+{% endblock left %}
+
+{% block content %}
+    <form id="room-form" method="POST" action="{% url 'main_room_create' %}">
+        {% csrf_token %}
+        {{ form.title }}
+        {{ form.game }}
+        <button class="register-button primary-button medium-border-radius">방 만들기</button>
+    </form>
+{% endblock content %}

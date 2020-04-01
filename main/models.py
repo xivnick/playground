@@ -5,12 +5,12 @@ from django.conf import settings
 class Room(models.Model):
 
     STATUS_CHOICES = (
-        ('W', 'waiting'),
-        ('I', 'in_game'),
+        ('W', 'Waiting'),
+        ('I', 'In Game'),
     )
 
     GAME_CHOICES = (
-        ('CHAT', 'just_chat'),
+        ('CHAT', 'Just Chat'),
         ('MIGHTY', 'Mighty'),
         ('NEMOS', 'Nemos'),
     )
@@ -25,7 +25,7 @@ class Room(models.Model):
     game = models.CharField(
         max_length=15,
         choices=GAME_CHOICES,
-        default='CHAT'
+        default=''
     )
 
     def __str__(self):

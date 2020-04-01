@@ -3,14 +3,16 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <link rel="stylesheet" href="https://use.typekit.net/sih5llr.css"> {# 제목용 #}
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500&display=swap" rel="stylesheet"> {# 본문용 #}
+
     <title>{% block title %}{% endblock title %}xivnick's Nemos</title>
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
-    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}?version=1.0"/>
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}?version=1.1"/>
     {% block css %}
     {% endblock css %}
-    <link rel="stylesheet" href="https://use.typekit.net/sih5llr.css">  {# 제목용 폰트 #}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> {# 모바일 대응 #}
     <meta charset="utf-8">

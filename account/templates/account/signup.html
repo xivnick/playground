@@ -5,7 +5,7 @@
 {% block title %}Sign Up :: {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}?version=1.0"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}?version=1.1"/>
 {% endblock css %}
 
 {% block left %}
@@ -13,7 +13,7 @@
 {% endblock left %}
 
 {% block content %}
-    <form id="register-form" method="POST" action="{% url 'account_signup' %}">
+    <form id="account-form" method="POST" action="{% url 'account_signup' %}">
         {% csrf_token %}
         <div class="text-center content-title">
             <h3>회원가입</h3>

@@ -4,9 +4,6 @@ from django.contrib import auth
 
 from .forms import SignUpForm, LoginForm
 
-from django.contrib.auth import views
-
-views.auth_login
 
 def login(req):
     if req.method == 'POST':
@@ -21,7 +18,7 @@ def login(req):
 
             print('[log]', username, 'login')
 
-            return redirect('main_page')
+            return redirect('root')
 
         return render(req, 'account/login.html', {'form': login_form, 'failed': True})
 

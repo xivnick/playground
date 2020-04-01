@@ -9,9 +9,16 @@
     width: 384px;
 }
 
-#register-form{
+#account-form{
     width: 240px;
     margin: auto;
+}
+
+#account-form input{
+    margin: 20px auto 0 auto;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
 }
 
 @media all and (max-width: 768px) {
@@ -21,7 +28,7 @@
 }
 
 @media all and (max-width: 384px) {
-    #register-form{
+    #account-form{
         width: 68.2%;
     }
 }
