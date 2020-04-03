@@ -149,9 +149,11 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/account/login/'
 
 # SASS
+SASS_PROCESSOR_ROOT = STATIC_ROOT
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
 ]
 SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = 'compact'
