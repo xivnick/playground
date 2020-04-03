@@ -1,11 +1,12 @@
 {% extends 'main/base.html' %}
 
 {% load static %}
+{% load sass_tags %}
 
 {% block title %}Sign Up :: {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}?version=1.1"/>
+    <link rel="stylesheet" type="text/css" href="{% sass_src 'account/css/account.scss' %}?version=1.1"/>
 {% endblock css %}
 
 {% block left %}
