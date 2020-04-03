@@ -133,3 +133,6 @@ dmypy.json
 
 # sass
 /static/*
+
+# secret
+secret.json
