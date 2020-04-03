@@ -4,27 +4,11 @@
     display: none;
 }
 
-.content-back{
-    margin: auto;
-    width: 384px;
-}
-
-#account-form{
-    width: 240px;
-    margin: auto;
-}
-
 #account-form input{
     margin: 20px auto 0 auto;
     height: 36px;
     font-size: 16px;
     line-height: 36px;
-}
-
-@media all and (max-width: 768px) {
-    .content-back{
-        width: 100%;
-    }
 }
 
 @media all and (max-width: 384px) {

@@ -13,10 +13,16 @@
 {% endblock left %}
 
 {% block content %}
+<div class="content-back-small base-color default-border">
     <form id="room-form" method="POST" action="{% url 'main_room_create' %}">
         {% csrf_token %}
+        <div class="text-center content-title">
+            <h3>방 만들기</h3>
+        </div>
+        <div class="line"></div>
         {{ form.title }}
         {{ form.game }}
         <button class="register-button primary-button medium-border-radius">방 만들기</button>
     </form>
+</div>
 {% endblock content %}

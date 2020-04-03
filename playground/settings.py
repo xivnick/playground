@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'account',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "playground/static")]
 LOGOUT_REDIRECT_URL = '/account/login'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/account/login/'
+
+# SASS
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+SASS_PRECISION = 8
