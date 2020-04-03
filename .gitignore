@@ -131,8 +131,5 @@ dmypy.json
 # pycharm
 .idea
 
-# sass
-/static/*
-
 # secret
 secret.json
