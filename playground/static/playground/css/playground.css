@@ -185,15 +185,16 @@ h2 {
   /* 1024 이하일 경우 subtitle 가로 고정 */
   #left-wrapper {
     width: 256px; } }
-
 @media all and (max-width: 768px) {
   h2 {
     font-size: 28px;
     text-align: center; }
+
   #left-wrapper {
     position: static;
     width: 87%;
     margin: 0 auto 32px; }
+
   #left-back {
     width: 100%;
     background-color: #ffffff;
@@ -201,11 +202,12 @@ h2 {
     border-bottom: 1px solid #BDBDBD;
     padding: 0;
     float: none; }
+
   #left-triangle {
     display: none; }
+
   #left-wrapper:after {
     clear: both; } }
-
 /* content setting */
 #content-wrapper {
   width: 512px;
@@ -267,56 +269,67 @@ form > .error-message {
   /* 768 이하일 경우 모바일 화면 띄우기 */
   .semi-border {
     border: 2px solid; }
+
   .default-border-radius {
     border-radius: 2px; }
+
   .medium-border-radius {
     border-radius: 4px; }
+
   h1 {
     font-size: 32px;
     line-height: 36px;
     margin: 0 0 0 12px; }
+
   header {
     height: 80px; }
+
   #header-back {
     height: 64px;
     padding: 14px 0 13px 14px; }
+
   .logo-box {
     height: 12px;
     width: 12px; }
+
   #user-button-wrapper {
     font-size: 12px;
     width: 192px; }
+
   #content-wrapper {
     float: none;
     width: 83%;
     margin: auto;
     padding-top: 0; }
+
   .content-back {
     padding-top: 32px; }
+
   .content-back-small {
     padding-top: 32px;
     width: 100%; } }
-
 @media all and (max-width: 480px) {
   header {
     height: 112px; }
+
   #user-button-wrapper {
     margin-left: calc(100% - 192px);
     margin-bottom: 12px; }
+
   #header-back {
     height: 96px; } }
-
 @media all and (max-width: 384px) {
   /* 작은 모바일 화면 양쪽 여백 대응 */
   #left-wrapper {
     width: calc(100% - 48px); }
+
   #content-wrapper {
     width: calc(100% - 64px); } }
-
 @media all and (max-width: 360px) {
   /* 작은 모바일 화면 양쪽 여백 대응 */
   #left-wrapper {
     width: calc(100% - 20px); }
+
   #content-wrapper {
     width: calc(100% - 32px); } }
 
