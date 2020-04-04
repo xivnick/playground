@@ -1,12 +1,11 @@
 {% extends 'main/base.html' %}
 
 {% load static %}
-{% load sass_tags %}
 
 {% block title %}Welcome! :: {% endblock title %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'account/css/account.scss' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'account/css/account.css' %}"/>
 {% endblock css %}
 
 {% block left %}

@@ -19,7 +19,7 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # secret file 접근 함
-secret_file = os.path.join(BASE_DIR, 'secret.json') # secrets.json 파일 위치를 명시
+secret_file = os.path.join(BASE_DIR, 'secret.json')  # secrets.json 파일 위치를 명시
 
 # file open
 with open(secret_file) as f:
@@ -46,7 +46,6 @@ DEBUG = get_secret('DEBUG')
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', 'xivnick.pythonanywhere.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -58,7 +57,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'account',
-    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +89,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'playground.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -101,7 +98,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -121,7 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -134,7 +129,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -151,12 +145,3 @@ LOGOUT_REDIRECT_URL = '/account/login'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/account/login/'
 
-# SASS
-SASS_PROCESSOR_ROOT = STATIC_ROOT
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'sass_processor.finders.CssFinder',
-]
-SASS_PRECISION = 8
-SASS_OUTPUT_STYLE = 'compact'

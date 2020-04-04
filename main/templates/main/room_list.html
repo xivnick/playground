@@ -1,10 +1,9 @@
 {% extends 'main/base.html' %}
 
 {% load static %}
-{% load sass_tags %}
 
 {% block css %}
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'main/css/main.scss' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}"/>
 {% endblock css %}
 
 {% block left %}

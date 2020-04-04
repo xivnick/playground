@@ -136,5 +136,4 @@ secret.json
 
 # sass
 *.scss
-/static/*
 .sass-cache

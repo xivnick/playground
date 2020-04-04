@@ -1,5 +1,4 @@
 {% load static %}
-{% load sass_tags %}
 
 <!DOCTYPE HTML>
 <html>
@@ -13,7 +12,7 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
-    <link rel="stylesheet" type="text/css" href="{% sass_src 'playground/css/playground.scss' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}"/>
     {% block css %}
     {% endblock css %}
 
