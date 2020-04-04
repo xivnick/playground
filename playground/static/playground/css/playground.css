@@ -307,6 +307,8 @@ form > .error-message {
 
   .content-back-small {
     padding-top: 32px;
+    padding-left: 10%;
+    padding-right: 10%;
     width: 100%; } }
 @media all and (max-width: 480px) {
   header {
@@ -324,7 +326,11 @@ form > .error-message {
     width: calc(100% - 48px); }
 
   #content-wrapper {
-    width: calc(100% - 64px); } }
+    width: calc(100% - 64px); }
+
+  .content-back-small {
+    padding-left: 10%;
+    padding-right: 10%; } }
 @media all and (max-width: 360px) {
   /* 작은 모바일 화면 양쪽 여백 대응 */
   #left-wrapper {
