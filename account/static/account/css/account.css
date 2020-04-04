@@ -1,23 +1,12 @@
 @charset "UTF-8";
 /* 로그인 버튼 가리기 */
-#user-button-wrapper {
-  display: none; }
+#user-button-wrapper { display: none; }
 
-#account-form input {
-  margin: 20px auto 0 auto;
-  height: 36px;
-  font-size: 16px;
-  line-height: 36px; }
+#account-form input { margin: 20px auto 0 auto; height: 36px; font-size: 16px; line-height: 36px; }
 
-@media all and (max-width: 384px) {
-  #account-form {
-    width: 100%; } }
-@media all and (max-width: 480px) {
-  /* 로그인 버튼이 없어서 480일때 헤더를 다시 복구 */
-  header {
-    height: 80px; }
-
-  #header-back {
-    height: 64px; } }
+@media all and (max-width: 384px) { #account-form { width: 100%; } }
+@media all and (max-width: 480px) { /* 로그인 버튼이 없어서 480일때 헤더를 다시 복구 */
+  header { height: 80px; }
+  #header-back { height: 64px; } }
 
 /*# sourceMappingURL=account.css.map */
