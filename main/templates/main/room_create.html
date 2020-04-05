@@ -13,7 +13,7 @@
 {% endblock left %}
 
 {% block content %}
-<div class="content-back-small base-color default-border">
+<div class="content-back-small">
     <form id="room-form" method="POST" action="{% url 'main_room_create' %}">
         {% csrf_token %}
         <div class="text-center content-title">

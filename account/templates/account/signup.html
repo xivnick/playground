@@ -13,7 +13,7 @@
 {% endblock left %}
 
 {% block content %}
-    <div class="content-back-small base-color default-border">
+    <div class="content-back-small">
         <form id="account-form" method="POST" action="{% url 'account_signup' %}">
             {% csrf_token %}
             <div class="text-center content-title">

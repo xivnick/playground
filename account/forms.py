@@ -13,11 +13,11 @@ class LoginForm(forms.ModelForm):
         widgets = {
             'username': forms.TextInput(attrs={
                 'placeholder': '아이디',
-                'class': "default-border default-border-radius",
+                'class': "default-border small-border-radius",
             }),
             'password': forms.PasswordInput(attrs={
                 'placeholder': '비밀번호',
-                'class': "default-border default-border-radius",
+                'class': "default-border small-border-radius",
             }),
         }
 
@@ -28,7 +28,6 @@ class SignUpForm(forms.ModelForm):
         label='password2',
         widget=forms.PasswordInput(attrs={
             'placeholder': '비밀번호 확인',
-            'class': "default-border default-border-radius",
             'style': "margin-top: 10px",
         })
     )
@@ -43,19 +42,15 @@ class SignUpForm(forms.ModelForm):
         widgets = {
             'username': forms.TextInput(attrs={
                 'placeholder': '아이디',
-                'class': "login-input default-border default-border-radius",
             }),
             'password': forms.PasswordInput(attrs={
                 'placeholder': '비밀번호',
-                'class': "login-input default-border default-border-radius",
             }),
             'first_name': forms.TextInput(attrs={
                 'placeholder': '이름',
-                'class': "login-input default-border default-border-radius",
             }),
             'email': forms.EmailInput(attrs={
                 'placeholder': '이메일',
-                'class': "login-input default-border default-border-radius",
             }),
         }
 

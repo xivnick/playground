@@ -12,9 +12,7 @@ class CreateRoomForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={
                 'placeholder': '방 제목',
-                'class': 'default-border-radius'
             }),
-            'game': forms.Select(attrs={
-                'class': 'default-border default-border-radius'
-            }),
+            # 'game': forms.Select(attrs={
+            # }),
         }
