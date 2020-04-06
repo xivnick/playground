@@ -67,18 +67,21 @@
             </div>
         </header>
         <div id="left-wrapper">
-            <div id="left-back" class="base-color">
-                {% block left %}
-                {% endblock left %}
+            <div class="{{ left_type }}">
+                <div id="left-back">
+                    {% block left %}
+                    {% endblock left %}
+                </div>
+                <div id="left-triangle"></div>
             </div>
-            <div id="left-triangle"></div>
         </div>
         <div id="content-wrapper">
             {% block content %}
             {% endblock content %}
         </div>
     </div>
-
+    {% block script %}
+    {% endblock script %}
 </body>
 
 </html>

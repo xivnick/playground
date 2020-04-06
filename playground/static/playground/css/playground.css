@@ -73,12 +73,20 @@ header #user-button-wrapper .text-button { margin-left: 16px; }
   header #user-button-wrapper { margin-left: calc(100% - 192px); margin-bottom: 12px; } }
 
 /* left setting */
-#left-wrapper { width: calc(50% - 256px); position: fixed; }
+#left-wrapper { width: calc(50% - 320px); position: fixed; z-index: 100; }
 @media all and (max-width: 1024px) { #left-wrapper { width: 256px; } }
-#left-wrapper h2 { font-size: 32px; line-height: 72px; text-align: right; margin: 0; }
-#left-wrapper #left-back { padding-right: 16px; height: 64px; width: calc(100% - 32px); float: left; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); }
-#left-wrapper #left-triangle { border-top: 64px solid #FDFDFD; border-right: 32px solid transparent; height: 0; width: 0; float: left; }
-@media all and (max-width: 768px) { #left-wrapper { /* 768 이하일 경우 모바일 헤더 세팅 */ position: static; width: 87%; margin: 0 auto 32px; }
+#left-wrapper #left-back { padding-right: 16px; width: calc(100% - 32px); float: left; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); background-color: #FDFDFD; }
+#left-wrapper #left-triangle { border-top: solid #FDFDFD; border-right: 32px solid transparent; width: 0; height: 0; float: left; }
+#left-wrapper .sub-title h2 { font-size: 32px; line-height: 72px; text-align: right; margin: 0; }
+#left-wrapper .sub-title #left-back { height: 64px; }
+#left-wrapper .sub-title #left-triangle { border-top-width: 64px; }
+#left-wrapper .left-tab .tab-button { width: 128px; padding-left: 10px; height: 48px; margin: 0 0 16px calc(100% - 128px); background-color: #FDFDFD; cursor: pointer; color: #BDBDBD; border-bottom: 2px solid #BDBDBD; }
+#left-wrapper .left-tab .tab-button:hover { color: #757575; border-bottom-color: #3F51B5; }
+#left-wrapper .left-tab .tab-on { color: black; border-bottom: 3px solid #3F51B5; }
+#left-wrapper .left-tab h2 { font-size: 24px; line-height: 60px; text-align: left; }
+#left-wrapper .left-tab #left-back { height: 128px; padding-right: 32px; }
+#left-wrapper .left-tab #left-triangle { border-top-width: 128px; }
+@media all and (max-width: 768px) { #left-wrapper { /* 768 이하일 경우 모바일 헤더 세팅 */ position: static; width: 87%; margin: 0 auto 32px; border: none; }
   #left-wrapper h2 { font-size: 28px; text-align: center; }
   #left-wrapper #left-back { width: 100%; background-color: #ffffff; box-shadow: none; border-bottom: 1px solid #BDBDBD; padding: 0; float: none; }
   #left-wrapper #left-triangle { display: none; }

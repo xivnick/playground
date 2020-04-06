@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from django.contrib import auth
 
 from .forms import SignUpForm, LoginForm
@@ -20,11 +19,11 @@ def login(req):
 
             return redirect('root')
 
-        return render(req, 'account/login.html', {'form': login_form, 'failed': True})
+        return render(req, 'account/login.html', {'left_type': 'sub-title', 'form': login_form, 'failed': True})
 
     login_form = LoginForm()
 
-    return render(req, 'account/login.html', {'form': login_form, 'failed': False})
+    return render(req, 'account/login.html', {'left_type': 'sub-title', 'form': login_form, 'failed': False})
 
 
 def logout(req):
@@ -56,4 +55,4 @@ def signup(req):
     else:
         signup_form = SignUpForm()
 
-    return render(req, 'account/signup.html', {'form': signup_form})
+    return render(req, 'account/signup.html', {'left_type': 'sub-title', 'form': signup_form})
