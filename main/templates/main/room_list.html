@@ -8,7 +8,7 @@
 
 {% block left %}
     <button class="tab-button tab-on"><h2 class="medium-futura">Rooms</h2></button>
-    <button class="tab-button tab-off"><h2 class="medium-futura">Chats</h2></button>
+    <button class="tab-button"><h2 class="medium-futura">Chats</h2></button>
 {% endblock left %}
 
 {% block content %}
@@ -31,11 +31,10 @@
                     {% else %}
                         <button class="room-button primary-light-button">관전</button>
                     {% endif %}
-
                 </div>
             {% endfor %}
         </div>
-        <div class="tab-box">
+        <div class="tab-box" style="display: none">
             채팅!
         </div>
     </div>

@@ -86,11 +86,15 @@ header #user-button-wrapper .text-button { margin-left: 16px; }
 #left-wrapper .left-tab h2 { font-size: 24px; line-height: 60px; text-align: left; }
 #left-wrapper .left-tab #left-back { height: 128px; padding-right: 32px; }
 #left-wrapper .left-tab #left-triangle { border-top-width: 128px; }
-@media all and (max-width: 768px) { #left-wrapper { /* 768 이하일 경우 모바일 헤더 세팅 */ position: static; width: 87%; margin: 0 auto 32px; border: none; }
-  #left-wrapper h2 { font-size: 28px; text-align: center; }
-  #left-wrapper #left-back { width: 100%; background-color: #ffffff; box-shadow: none; border-bottom: 1px solid #BDBDBD; padding: 0; float: none; }
-  #left-wrapper #left-triangle { display: none; }
-  #left-wrapper #left-wrapper:after { clear: both; } }
+@media all and (max-width: 768px) { #left-wrapper { /* 768 이하일 경우 모바일 헤더 세팅 */ position: static; width: 87%; margin: 0 auto 32px; }
+  #left-wrapper .sub-title h2 { font-size: 28px; text-align: center; }
+  #left-wrapper .sub-title #left-back { width: 100%; background-color: #ffffff; box-shadow: none; border-bottom: 1px solid #BDBDBD; padding: 0; float: none; }
+  #left-wrapper .sub-title #left-triangle { display: none; }
+  #left-wrapper .left-tab { clear: both; }
+  #left-wrapper .left-tab h2 { text-align: center; }
+  #left-wrapper .left-tab .tab-button { height: 48px; width: 50%; float: left; margin: 0; }
+  #left-wrapper .left-tab #left-back { width: 100%; height: 64px; background-color: #ffffff; box-shadow: none; float: none; padding: 16px 0 0 0; }
+  #left-wrapper .left-tab #left-triangle { display: none; } }
 @media all and (max-width: 384px) { #left-wrapper { width: calc(100% - 48px); } }
 @media all and (max-width: 360px) { #left-wrapper { width: calc(100% - 20px); } }
 
