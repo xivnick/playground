@@ -35,25 +35,52 @@
             {% endfor %}
         </div>
         <div class="tab-box" style="display: none">
-            채팅!
+            <div class="text-center content-title">
+                <h3>Chat Room - 대기실</h3>
+            </div>
+            <div id="chat-box">
+                <p v-for="chat in chats">
+                    <a>[[ chat.user ]]: </a>[[ chat.message ]]
+                </p>
+            </div>
+            <form onsubmit="return chat_send();" id="chat-input-form">
+                <input id="chat-message" type="text" placeholder="메시지를 입력하세요." autocomplete="off">
+                <button class="primary-button">전송</button>
+            </form>
         </div>
     </div>
 {% endblock content %}
 
 {% block script %}
     <script>
-        let tab_buttons = $(".tab-button");
-        tab_buttons.on('click',function(){
-          //버튼 색 제거,추가
-          tab_buttons.removeClass('tab-on');
-          $(this).addClass('tab-on')
-
-          //컨텐츠 제거 후 인덱스에 맞는 컨텐츠 노출
-          let idx = tab_buttons.index(this);
-          let tab_boxes = $('.tab-box');
-
-          tab_boxes.hide();
-          tab_boxes.eq(idx).show();
+        let chat_box = new Vue({
+            delimiters: ['[[', ']]'],
+            el: '#chat-box',
+            data: {
+                chats: [
+                    {user: '김민재', message: '메시지 메시지'},
+                    {user: '땡떙', message: '도레미파솔라시도'},
+                ]
+            }
         });
+
+        const chat_message = document.getElementById('chat-message');
+
+        let user_name;
+        {% if user.is_authenticated %}
+            user_name = '{{ user.first_name }}';
+        {% else %}
+            user_name = '익명' + (Math.floor(Math.random()*8999) + 1000).toString();
+        {% endif %}
+
+        chat_send = () => {
+            chat_box.chats.push({
+                user: user_name,
+                message: chat_message.value
+            });
+
+            chat_message.value = '';
+            return false;
+        };
     </script>
 {% endblock script %}

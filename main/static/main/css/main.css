@@ -30,5 +30,13 @@
   .room-title-wrapper { font-size: 16px; line-height: 18px; }
   .room-game-wrapper { left: 16px; bottom: 16px; font-size: 12px; }
   .room-button { width: 64px; height: 24px; right: 16px; bottom: 12px; font-size: 12px; } }
+/* chat tab */
+#chat-box { height: 320px; margin-bottom: 16px; background-color: white; overflow: scroll; border: 1px solid #BDBDBD; border-radius: 2px; }
+#chat-box p { text-align: justify; word-break: break-all; font-size: 14px; line-height: 18px; margin: 8px 0; padding: 0 10px; }
+#chat-box p a { font-weight: 400; }
+
+#chat-input-form input { height: 32px; float: left; width: calc(100% - 90px); }
+#chat-input-form button { height: 32px; float: left; margin-left: 10px; width: 80px; border-radius: 4px; }
+#chat-input-form:after { content: ""; display: block; clear: both; }
 
 /*# sourceMappingURL=main.css.map */

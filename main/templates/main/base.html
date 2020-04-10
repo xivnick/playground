@@ -11,6 +11,7 @@
     <title>{% block title %}{% endblock title %}xivnick's Nemos</title>
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'playground/js/vue.js' %}"></script>
     <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
     <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}"/>
     {% block css %}
@@ -37,7 +38,7 @@
             <div id="header-back" class="base-color">
                 {# user button #}
                 <div id="user-button-wrapper">
-                    {% if user.is_authenticated  %}
+                    {% if user.is_authenticated %}
                         안녕하세요, {{ user.first_name }}님!<a class="text-button" href="{% url 'account_logout' %}">로그아웃</a>
                     {% else %}
                         로그인을 해주세요!<a class="text-button" href="{% url 'account_login' %}">로그인</a>
@@ -80,6 +81,23 @@
             {% endblock content %}
         </div>
     </div>
+    <script>
+        if ('{{ left_type }}' === 'left-tab'){
+            let tab_buttons = $(".tab-button");
+            tab_buttons.on('click',function(){
+              //버튼 색 제거,추가
+              tab_buttons.removeClass('tab-on');
+              $(this).addClass('tab-on')
+
+              //컨텐츠 제거 후 인덱스에 맞는 컨텐츠 노출
+              let idx = tab_buttons.index(this);
+              let tab_boxes = $('.tab-box');
+
+              tab_boxes.hide();
+              tab_boxes.eq(idx).show();
+            });
+        }
+    </script>
     {% block script %}
     {% endblock script %}
 </body>
