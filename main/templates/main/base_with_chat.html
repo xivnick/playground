@@ -68,11 +68,14 @@
             let width = window.innerWidth;
             let height = window.innerHeight;
 
-            if(width <= 480){
-                $('#chat-box').height(height-428);
-            }
-            else if(width <= 768){
-                $('#chat-box').height(height-396);
+            if(height > 512) {
+                if (width <= 480) {
+                    $('#chat-box').height(height - 428);
+                } else if (width <= 768) {
+                    $('#chat-box').height(height - 396);
+                }
+            } else {
+                $('#chat-box').height(512-396);
             }
         };
 
