@@ -4,7 +4,7 @@ a, a:hover, a:visited, a:active { color: #000000; text-decoration: none; }
 
 button { border: none; display: block; }
 
-button:focus, select:focus { outline: none; }
+button:focus, select:focus, input:focus { outline: none; }
 
 select { -webkit-appearance: none; /* 네이티브 외형 감추기 */ -moz-appearance: none; appearance: none; background: url("http://cdn.onlinewebfonts.com/svg/img_295694.svg") no-repeat 95% center/16px; }
 
@@ -110,9 +110,7 @@ header #user-button-wrapper .text-button { margin-left: 16px; }
   #content-wrapper .content-back { padding: 32px 48px; }
   #content-wrapper .content-back-small { padding-top: 32px; padding-left: 10%; padding-right: 10%; width: 100%; } }
 @media all and (max-width: 480px) { #content-wrapper .content-back, #content-wrapper .content-back-small { padding-left: 9%; padding-right: 9%; } }
-@media all and (max-width: 384px) { #content-wrapper { width: calc(100% - 64px); }
-  #content-wrapper .content-back, #content-wrapper .content-back-small { padding-left: 28px; padding-right: 28px; } }
-@media all and (max-width: 360px) { #content-wrapper { width: calc(100% - 32px); }
+@media all and (max-width: 384px) { #content-wrapper { width: calc(100% - 32px); }
   #content-wrapper .content-back, #content-wrapper .content-back-small { padding-left: 20px; padding-right: 20px; } }
 
 /* input setting */
