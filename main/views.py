@@ -13,7 +13,7 @@ def room_list(req):
     # 방 목록 가져오기 / 게임 중인 방은 아래
     rooms = Room.objects.all().order_by('-status')
 
-    return render(req, 'main/room_list.html', {'left_type': 'left-tab', 'rooms': rooms})
+    return render(req, 'main/room_list.html', {'rooms': rooms})
 
 
 @login_required
@@ -35,4 +35,4 @@ def room_create(req):
     else:
         create_room_form = CreateRoomForm()
 
-    return render(req, 'main/room_create.html', {'left_type': 'sub-title', 'form': create_room_form})
+    return render(req, 'main/room_create.html', {'form': create_room_form})

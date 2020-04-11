@@ -69,7 +69,9 @@
             </div>
         </header>
         <div id="left-wrapper">
-            <div class="{{ left_type }}">
+        {% block left-type %}
+            <div id="left-type" class="sub-title">
+        {% endblock left-type %}
                 <div id="left-back">
                     {% block left %}
                     {% endblock left %}
@@ -82,23 +84,6 @@
             {% endblock content %}
         </div>
     </div>
-    <script>
-        if ('{{ left_type }}' === 'left-tab'){
-            let tab_buttons = $(".tab-button");
-            tab_buttons.on('click',function(){
-              //버튼 색 제거,추가
-              tab_buttons.removeClass('tab-on');
-              $(this).addClass('tab-on')
-
-              //컨텐츠 제거 후 인덱스에 맞는 컨텐츠 노출
-              let idx = tab_buttons.index(this);
-              let tab_boxes = $('.tab-box');
-
-              tab_boxes.hide();
-              tab_boxes.eq(idx).show();
-            });
-        }
-    </script>
     {% block script %}
     {% endblock script %}
 </body>

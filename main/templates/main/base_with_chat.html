@@ -1,0 +1,89 @@
+
+{% extends 'main/base.html' %}
+
+{% block left-type %}
+    <div id="left-type" class="left-tab">
+{% endblock left-type %}
+    </div>
+
+{% block script %}
+    <script type="application/javascript">
+
+        // tab js
+        let tab_buttons = $(".tab-button");
+        tab_buttons.on('click',function(){
+          // 버튼 색 제거,추가
+          tab_buttons.removeClass('tab-on');
+          $(this).addClass('tab-on');
+
+          // 컨텐츠 제거 후 인덱스에 맞는 컨텐츠 노출
+          let idx = tab_buttons.index(this);
+          let tab_boxes = $('.tab-box');
+
+          tab_boxes.hide();
+          tab_boxes.eq(idx).show();
+        });
+
+        // 이름 추출 / 없으면 익명
+        let user_name = '익명' + (Math.floor(Math.random()*8999) + 1000).toString();
+        {% if user.is_authenticated %}
+            user_name = '{{ user.first_name }}';
+        {% endif %}
+
+        let chat_box = new Vue({
+            delimiters: ['[[', ']]'],
+            el: '#chat-box',
+            data: {
+                chats: [
+                    {user: '홍길동', message: '메시지 메시지'},
+                    {user: '땡땡', message: '도레미파솔라시도'},
+                ]
+            },
+            updated: () => {
+                // 새로운 메시지가 오면 최하단으로
+                const chat_box_dom = document.getElementById('chat-box');
+
+                chat_box_dom.scrollTop = chat_box_dom.scrollHeight;
+            }
+        });
+
+        // functions
+        push_chat_box = (user, message) => {
+            chat_box.chats.push({
+                user: user,
+                message: message
+            });
+        };
+
+        chat_send = () => {
+            const chat_message = document.getElementById('chat-message');
+
+            push_chat_box(user_name, chat_message.value);
+            chat_message.value = '';
+
+            return false; // 페이지 리로드 방지
+        };
+
+        resize_chat_box = () => {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+
+            if(width <= 480){
+                $('#chat-box').height(height-428);
+            }
+            else if(width <= 768){
+                $('#chat-box').height(height-396);
+            }
+        };
+
+        // listeners
+        window.addEventListener('resize', _.debounce(
+            () => {
+                resize_chat_box();
+            }, 500
+        ), true);
+
+        // init code
+        resize_chat_box();
+    </script>
+{% endblock script %}

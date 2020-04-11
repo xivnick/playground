@@ -53,6 +53,7 @@ body { background: #BDBDBD; font-family: '본고딕', 'Noto Sans KR', sans-serif
 /* background css */
 #body-wrapper { background: #E6E6E1; padding-bottom: 96px; }
 #body-wrapper:after { content: ""; display: block; clear: both; }
+@media all and (max-width: 768px) { #body-wrapper { padding-bottom: 32px; } }
 
 /* header css */
 header { height: 128px; }
@@ -106,7 +107,7 @@ header #user-button-wrapper .text-button { margin-left: 16px; }
 #content-wrapper .content-title { width: 100%; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid #BDBDBD; }
 #content-wrapper h3 { font-weight: normal; font-size: 24px; margin: 0; }
 @media all and (max-width: 768px) { #content-wrapper { float: none; width: 83%; margin: auto; padding-top: 0; }
-  #content-wrapper .content-back { padding: 32px 48px 48px; }
+  #content-wrapper .content-back { padding: 32px 48px; }
   #content-wrapper .content-back-small { padding-top: 32px; padding-left: 10%; padding-right: 10%; width: 100%; } }
 @media all and (max-width: 480px) { #content-wrapper .content-back, #content-wrapper .content-back-small { padding-left: 9%; padding-right: 9%; } }
 @media all and (max-width: 384px) { #content-wrapper { width: calc(100% - 64px); }

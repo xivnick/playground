@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base_with_chat.html' %}
 
 {% load static %}
 
@@ -50,54 +50,3 @@
         </div>
     </div>
 {% endblock content %}
-
-{% block script %}
-    <script>
-        const chat_message = document.getElementById('chat-message');
-
-        let user_name = '익명' + (Math.floor(Math.random()*8999) + 1000).toString();
-        {% if user.is_authenticated %}
-            user_name = '{{ user.first_name }}';
-        {% endif %}
-
-        let chat_box = new Vue({
-            delimiters: ['[[', ']]'],
-            el: '#chat-box',
-            data: {
-                chats: [
-                    {user: '홍길동', message: '메시지 메시지'},
-                    {user: '땡땡', message: '도레미파솔라시도'},
-                ]
-            },
-            updated: () => {
-                const chat_box_dom = document.getElementById('chat-box');
-
-                chat_box_dom.scrollTop = chat_box_dom.scrollHeight;
-                console.log("hello");
-            }
-        });
-
-        push_chat_box = (user, message) => {
-            chat_box.chats.push({
-                user: user,
-                message: message
-            });
-        };
-
-        chat_send = () => {
-            push_chat_box(user_name, chat_message.value);
-
-            chat_message.value = '';
-            return false;
-        };
-
-        window.addEventListener('resize', _.debounce(
-            () => {
-                let width = window.innerWidth;
-                let height = window.innerHeight;
-
-                push_chat_box('system', `(${width}, ${height})`);
-            }, 500
-        ), true);
-    </script>
-{% endblock script %}
