@@ -58,8 +58,10 @@
         chat_send = () => {
             const chat_message = document.getElementById('chat-message');
 
-            push_chat_box(user_name, chat_message.value);
-            chat_message.value = '';
+            if(chat_message.value !== '') {
+                push_chat_box(user_name, chat_message.value);
+                chat_message.value = '';
+            }
 
             return false; // 페이지 리로드 방지
         };
@@ -70,12 +72,12 @@
 
             if(height > 512) {
                 if (width <= 480) {
-                    $('#chat-box').height(height - 428);
+                    $('#chat-box').height(height - 352);
                 } else if (width <= 768) {
-                    $('#chat-box').height(height - 396);
+                    $('#chat-box').height(height - 320);
                 }
             } else {
-                $('#chat-box').height(512-396);
+                $('#chat-box').height(512-320);
             }
         };
 
