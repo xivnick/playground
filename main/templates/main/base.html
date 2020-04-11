@@ -1,5 +1,7 @@
 {% load static %}
 
+{% with ver='1.0.0' %}
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -14,7 +16,7 @@
     <script src="{% static 'playground/js/vue.js' %}"></script>
     <script src="{% static 'playground/js/lodash.js' %}"></script>
     <link rel="stylesheet" type="text/css" href={% static 'playground/css/bootstrap.css' %}>
-    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'playground/css/playground.css' %}?{{ ver }}"/>
     {% block css %}
     {% endblock css %}
 
@@ -89,3 +91,5 @@
 </body>
 
 </html>
+
+{% endwith %}
