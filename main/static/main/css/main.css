@@ -34,6 +34,7 @@
 #chat-box { height: 320px; margin-bottom: 16px; background-color: white; overflow: scroll; border: 1px solid #BDBDBD; border-radius: 2px; }
 #chat-box p { text-align: justify; word-break: break-all; font-size: 14px; line-height: 18px; margin: 8px 0; padding: 0 10px; }
 #chat-box p a { font-weight: 400; }
+#chat-box .system { text-align: center; }
 
 #chat-input-form { border: 1px solid #BDBDBD; border-radius: 4px; background-color: #FAFAFA; padding: 4px; position: relative; }
 #chat-input-form input { height: 32px; width: calc(100% - 42px); border: none; font-size: 16px; }

@@ -6,7 +6,36 @@
 {% endblock left-type %}
     </div>
 
+{% block content %}
+    <div class="content-back">
+        <div class="tab-box">
+            {% block main-content %}
+            {% endblock main-content %}
+        </div>
+        <div class="tab-box" style="display: none">
+            <div id="chat-box">
+                <template v-for="chat in chats">
+                    <template v-if="chat.user === 'system'">
+                        <p class="system">[[chat.message]]</p>
+                    </template>
+                    <template v-else>
+                        <p><a>[[ chat.user ]]</a> : [[ chat.message ]]</p>
+                    </template>
+                </template>
+            </div>
+            <form onsubmit="return chat_send();" id="chat-input-form">
+                <input id="chat-message" type="text" placeholder="메시지를 입력하세요." autocomplete="off">
+                <button class="medium-futura primary-button">></button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+
 {% block script %}
+
+    {% with socket_url='https://playground-socket.herokuapp.com' %}
+
+    <script src="{{ socket_url }}/socket.io/socket.io.js"></script>
     <script type="application/javascript">
 
         // tab js
@@ -34,10 +63,7 @@
             delimiters: ['[[', ']]'],
             el: '#chat-box',
             data: {
-                chats: [
-                    {user: '홍길동', message: '메시지 메시지'},
-                    {user: '땡땡', message: '도레미파솔라시도'},
-                ]
+                chats: []
             },
             updated: () => {
                 // 새로운 메시지가 오면 최하단으로
@@ -46,6 +72,8 @@
                 chat_box_dom.scrollTop = chat_box_dom.scrollHeight;
             }
         });
+
+        const socket = io.connect('{{ socket_url }}');
 
         // functions
         push_chat_box = (user, message) => {
@@ -60,6 +88,7 @@
 
             if(chat_message.value !== '') {
                 push_chat_box(user_name, chat_message.value);
+                socket.emit('chat', chat_message.value);
                 chat_message.value = '';
             }
 
@@ -88,7 +117,27 @@
             }, 500
         ), true);
 
+        // socket listeners
+        socket.on('connection', () => {
+            socket.emit('join', user_name, {{ room_name }});
+        })
+        socket.on('chat', (name, text) => {
+            push_chat_box(name, text);
+        });
+        socket.on('join', (name) => {
+            push_chat_box('system', `${name}님이 입장했어요!`);
+        });
+        socket.on('update', () => {
+            console.log('updated called');
+        });
+        socket.on('disconnect', (name) => {
+            if(name === 'transport close') return;
+            push_chat_box('system', `${name}님이 떠났어요..`);
+        })
+
         // init code
         resize_chat_box();
     </script>
+
+    {% endwith %}
 {% endblock script %}

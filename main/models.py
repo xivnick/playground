@@ -16,7 +16,7 @@ class Room(models.Model):
     )
 
     host = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, unique=True)
     status = models.CharField(
         max_length=1,
         choices=STATUS_CHOICES,
