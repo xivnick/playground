@@ -73,7 +73,7 @@
             }
         });
 
-        const socket = io.connect('{{ socket_url }}');
+        const socket = io.connect('{{ socket_url }}', { transports: ['websocket'] });
 
         // functions
         push_chat_box = (user, message) => {
