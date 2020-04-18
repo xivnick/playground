@@ -108,6 +108,9 @@
             } else {
                 $('#chat-box').height(512-330);
             }
+
+            const chat_box_dom = document.getElementById('chat-box');
+            chat_box_dom.scrollTop = chat_box_dom.scrollHeight;
         };
 
         // listeners
@@ -130,8 +133,12 @@
         socket.on('update', () => {
             console.log('updated called');
         });
-        socket.on('disconnect', (name) => {
-            if(name === 'transport close') return;
+        socket.on('disconnect', (err, name) => {
+            if(err) {
+                console.log(err);
+                push_chat_box('system', '재접속되었습니다.')
+                return;
+            }
             push_chat_box('system', `${name}님이 떠났어요..`);
         })
 
